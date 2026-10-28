@@ -1,0 +1,9 @@
+<Project>
+
+  <!-- Build/publish output goes to artifacts/ so it never clutters bin/ (scripts live there).
+       Must be set in Directory.Build.props, not the csproj (NETSDK1199). -->
+  <PropertyGroup>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+  </PropertyGroup>
+
+</Project>

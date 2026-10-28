@@ -1,0 +1,4 @@
+# .NET build output (redirected by UseArtifactsOutput) and packaging output
+artifacts/
+obj/
+dist/

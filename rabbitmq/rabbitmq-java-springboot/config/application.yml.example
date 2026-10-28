@@ -1,0 +1,21 @@
+# 配置文件示例：指向测试环境 172.20.140.143
+# 使用方式：放在 jar 同目录（文件名 application.yml），或作为 --spring.config.additional-location 参数传入
+spring:
+  rabbitmq:
+    host: 172.20.140.143
+    port: 5672
+    username: admq
+    password: changeme
+    virtual-host: apusic
+
+demo:
+  exchange: demo.topic
+  queue: demo.queue
+  routing-key: demo.message
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info

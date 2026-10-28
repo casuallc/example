@@ -1,0 +1,31 @@
+# Private keys (certs keep public certificates only)
+*.key
+
+# Proprietary libraries (not redistributable)
+jms-client/lib/admq-jms-client-jakarta-*.jar
+
+# Build artifacts
+target/
+dist/
+release/
+artifacts/
+node_modules/
+obj/
+*.class
+
+# Compiled binaries
+*.exe
+*.dll
+tjyj-api-service/tjyj-api-service
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# PKCS12 keystores contain private keys
+*-keystore.p12

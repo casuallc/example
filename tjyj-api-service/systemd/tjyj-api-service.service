@@ -1,0 +1,24 @@
+[Unit]
+Description=tjyj-api-service HTTP proxy
+After=network.target
+
+[Service]
+Type=simple
+User=tjyj
+Group=tjyj
+WorkingDirectory=/opt/tjyj-api-service
+EnvironmentFile=/opt/tjyj-api-service/env.conf
+ExecStart=/opt/tjyj-api-service/tjyj-api-service
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+
+# 安全加固（可选）
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/tjyj-api-service
+
+[Install]
+WantedBy=multi-user.target

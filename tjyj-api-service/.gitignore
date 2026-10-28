@@ -1,0 +1,18 @@
+# Binaries
+tjyj-api-service
+*.exe
+
+# Build output
+dist/
+release/
+
+# Go
+vendor/
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

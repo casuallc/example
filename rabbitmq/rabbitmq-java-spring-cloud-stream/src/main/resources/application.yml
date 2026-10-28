@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: rabbitmq-java-spring-cloud-stream
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    virtual-host: ${RABBITMQ_VHOST:/}
+  cloud:
+    function:
+      definition: demoConsumer
+    stream:
+      bindings:
+        demoConsumer-in-0:
+          destination: ${demo.exchange}
+          group: ${demo.queue}
+        demoProducer-out-0:
+          destination: ${demo.exchange}
+      rabbit:
+        bindings:
+          demoConsumer-in-0:
+            consumer:
+              # queue 名固定为 demo.queue（默认会拼成 demo.topic.demo.queue）
+              queue-name-group-only: true
+              binding-routing-key: ${demo.routing-key}
+              exchange-type: topic
+          demoProducer-out-0:
+            producer:
+              # 生产者默认 routing key 是 destination 名，这里固定为 demo.message
+              routing-key-expression: '''${demo.routing-key}'''
+
+demo:
+  exchange: demo.topic
+  queue: demo.queue
+  routing-key: demo.message
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info

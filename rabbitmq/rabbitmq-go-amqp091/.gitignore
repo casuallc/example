@@ -1,0 +1,4 @@
+dist/
+rabbitmq-go-amqp091
+rabbitmq-go-amqp091.exe
+config.json

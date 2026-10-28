@@ -1,0 +1,16 @@
+{
+  "name": "rabbitmq-nodejs-amqplib",
+  "version": "1.0.0",
+  "description": "RabbitMQ demo with amqplib: HTTP-triggered publish + background consumer",
+  "private": true,
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.5"
+  }
+}

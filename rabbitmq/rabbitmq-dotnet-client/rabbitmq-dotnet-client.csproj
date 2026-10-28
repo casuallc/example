@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
+  </ItemGroup>
+
+  <!-- dist/ holds a full copy of the sources for packaging; exclude it from compilation -->
+  <ItemGroup>
+    <Compile Remove="dist/**" />
+    <Content Remove="dist/**" />
+    <None Remove="dist/**" />
+  </ItemGroup>
+
+</Project>

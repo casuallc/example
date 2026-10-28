@@ -1,0 +1,11 @@
+{
+  "host": "172.20.140.143",
+  "port": 5672,
+  "username": "admq",
+  "password": "changeme",
+  "virtualHost": "apusic",
+  "exchange": "demo.topic",
+  "queue": "demo.queue",
+  "routingKey": "demo.message",
+  "httpAddr": ":8080"
+}

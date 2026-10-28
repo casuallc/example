@@ -1,0 +1,29 @@
+// Configuration example: points at the test environment 172.20.140.143.
+// Usage: place next to rabbitmq-dotnet-client.dll as "appsettings.json",
+// or override individual values via the RABBITMQ_HOST / RABBITMQ_PORT /
+// RABBITMQ_USERNAME / RABBITMQ_PASSWORD / RABBITMQ_VHOST environment variables.
+{
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://0.0.0.0:8080"
+      }
+    }
+  },
+  "RabbitMQ": {
+    "Host": "172.20.140.143",
+    "Port": 5672,
+    "Username": "admq",
+    "Password": "changeme",
+    "VirtualHost": "apusic",
+    "Exchange": "demo.topic",
+    "Queue": "demo.queue",
+    "RoutingKey": "demo.message"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
